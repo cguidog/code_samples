@@ -1,0 +1,469 @@
+header {
+  position: sticky;
+  top: map-get($spacers, 2);
+  transition: $transition-base;
+  z-index: 99;
+
+  #navbar-overlay {
+    top: map-get($spacers, 2) * -1;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: rgba($neon, 0.20);
+    backdrop-filter: blur(37px);
+    height: 0;
+    z-index: 1;
+    transition: $transition-base;
+
+    &.expanded-mobile {
+      height: 100vh;
+    }
+
+    &.expanded {
+      @media screen and (min-width: $desktop) {
+        min-height: 100vh;
+        top: 0;
+      }
+    }
+  }
+
+  &:has(#main-nav.nav-expanded) {
+    top: 0;
+  }
+}
+
+#main-nav {
+  display: block;
+  border-radius: 5px;
+  box-shadow: 0px 2px 18px 0px rgba(0, 24, 33, 0.50), 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+  width: calc(100% - map-get($spacers, 2) * 2);
+  margin: map-get($spacers, 2) auto 0;
+  padding: 12px map-get($spacers, 1);
+  border-radius: 5px;
+  z-index: 1;
+  position: relative;
+  transition: $transition-base;
+  overflow: hidden;
+
+  @media screen and (min-width: $desktop) {
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: baseline;
+
+    &.nav-expanded {
+      width: 100%;
+      padding: 36px 40px 12px ;
+      margin-top: 0;
+      border-radius: 0;
+    }
+  }
+
+  .navbar-brand-toggler-container {
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (min-width: $desktop) {
+      // width: auto;
+      width:90px;
+      transition: $transition-base;
+
+      .navbar-brand {
+        opacity: 1;
+        transition: $transition-base;
+      }
+
+      &.search-active {
+        width: 0;
+
+        .navbar-brand {
+          opacity: 0;
+          z-index: -1;
+          position: relative;
+        }
+      }
+    }
+
+    .navbar-toggler {
+      border: none;
+      padding-right: 5px;
+
+      .navbar-toggler-icon {
+        background-image: url('./../assets/images/buttons/mobile_menu_opened.svg');
+        transition: $transition-base;
+      }
+
+      &.collapsed {
+        .navbar-toggler-icon {
+          background-image: url('./../assets/images/buttons/mobile_menu_closed.svg');
+        }
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+
+  .search-form-container {
+    display: none;
+    align-items: center;
+    justify-content: flex-end;
+    transition: $transition-base;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    padding: map-get($spacers, 1);
+    background-color: $navy;
+    border-radius: 5px;
+
+    @media screen and (min-width: $desktop) {
+      display: flex;
+      position: relative;
+      // width: auto;
+      width:90px;
+      padding: unset;
+
+      &.active {
+        width:auto;
+      }
+    }
+
+    form {
+      @media screen and (min-width: $desktop) {
+        width: 0%;
+        overflow: hidden;
+      }
+    }
+
+    .search-form-trigger {
+      display: none;
+      background-color: transparent;
+      border: none;
+      position: relative;
+      width: map-get($spacers, 4);
+      height: map-get($spacers, 4);
+
+      @media screen and (min-width: $desktop) {
+        display: block;
+      }
+
+      svg {
+        width: map-get($spacers, 2);
+        height: map-get($spacers, 2);
+        transition: $transition-base;
+        position: absolute;
+        inset: 0;
+        margin: auto;
+
+        &:first-of-type {
+          opacity: 1;
+        }
+
+        &:last-of-type {
+          opacity: 0;
+        }
+
+        path {
+          transition: $transition-base;
+          fill: $white;
+          opacity: 0.55;
+        }
+      }
+
+      &:hover {
+        svg {
+          path {
+            opacity: 1;
+          }
+        }
+      }
+
+      &:focus-visible {
+        outline: auto;
+      }
+    }
+
+    &.active {
+      width: 100%;
+
+      form {
+        width: 100%;
+      }
+
+      .search-form-trigger {
+        svg {
+          &:first-of-type {
+            opacity: 0;
+          }
+
+          &:last-of-type {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &.expanded-mobile {
+    min-height: calc(94vh - 48px);
+    align-items: baseline;
+
+    .search-form-container {
+      display: flex;
+    }
+  }
+}
+
+#main-menu {
+  opacity: 1;
+  width: auto;
+  transition: $transition-base;
+  padding-top: 75px;
+
+  @media screen and (min-width: $desktop) {
+    padding-top: unset;
+  }
+
+  .menu-item {
+    position: unset;
+    font-size: 38px;
+    line-height: 57px;
+    letter-spacing: -0.76px;
+    padding: 10px;
+
+    &.menu-expanded {
+      opacity: 0;
+    }
+
+    @media screen and (min-width: $desktop) {
+      padding: 0;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.32px;
+
+      &.active {
+        font-weight: $font-weight-bold;
+      }
+
+      &.menu-expanded {
+        opacity: 1;
+      }
+    }
+
+    .nav-link {
+      color: $navy-50;
+      transition: $transition-base;
+      padding: 0;
+
+      @media screen and (min-width: $desktop) {
+        padding: 0 map-get($spacers, 1);
+        margin: 0 map-get($spacers, 1);
+      }
+
+      &.dropdown-toggle {
+        position: relative;
+
+        &::before,
+        &::after {
+          position: absolute;
+          content: "";
+          background-color: $navy-50;
+          right: 0;
+          border: none;
+          inset: 0 0 0 93%;
+          margin: auto;
+          transition: $transition-base;
+        }
+
+        &::before {
+          width: 18px;
+          height: 2px;
+        }
+
+        &::after {
+          width: 2px;
+          height: 18px;
+          transform: scaleY(1);
+        }
+
+        @media screen and (min-width: $desktop) {
+          &::before {
+            inset: 0 0 0 90%;
+            width: 9px;
+            height: 1px;
+          }
+          &::after {
+            inset: 0 0 0 90%;
+            width: 1px;
+            height: 9px;
+          }
+        }
+
+        &.show {
+          font-weight: $font-weight-bold;
+          color: $navy-100;
+
+          &::after {
+            width: 2px;
+            height: 18px;
+            transform: scaleY(0);
+          }
+  
+          @media screen and (min-width: $desktop) {
+            color: $navy-50;
+          }
+        }
+      }
+    }
+
+    .dropdown-menu {
+      background-color: transparent;
+      border: 1px solid transparent;
+      left: 0;
+      width: 100%;
+      padding-bottom: 0;
+      z-index: -1;
+      border-radius: 0;
+      transition: $transition-base;
+      display: flex;
+      flex-direction: column;
+      gap: map-get($spacers, 1) / 2;
+      max-height: 0;
+      overflow: hidden;
+      
+      @media screen and (min-width: $desktop) {
+        display: block;
+        position: absolute;
+        top: 60%;
+        border: solid 1px $navy;
+        background-color: $navy;
+        margin-top: -1rem;
+        padding-top: 1rem;
+      }
+
+      .menu-item {
+        padding: 0;
+
+        .dropdown-item {
+          color: $navy-50;
+          padding: 10px 20px;
+          opacity: 0;
+          transition: opacity 0.25s ease-in-out, background-color 0.25s ease-in-out, color 0.25s ease-in-out 0.25s;
+          position: relative;
+          font-size: 21px;
+          font-weight: $font-weight-bold;
+          line-height: 31.5px;
+          letter-spacing: -0.63px;
+
+          @media screen and (min-width: $desktop) {
+            border-top: 1px solid rgba($white, 0.25);
+            color: $navy-75;
+            font-size: 51px;
+            line-height: 64px;
+            letter-spacing: -1.53px;
+            padding: map-get($spacers, 4) map-get($spacers, 2);
+          }
+
+          @media screen and (min-width: $desktop) and (max-height: $tall-screen) {
+            font-size: 42px;
+            line-height: 46px;
+            letter-spacing: -1.53px;
+            padding: map-get($spacers, 3) map-get($spacers, 2);
+          }
+
+          @media screen and (min-width: $desktop) and (max-height: $medium-screen) {
+            font-size: 26px;
+            line-height: 30px;
+            letter-spacing: -1.13px;
+            padding: map-get($spacers, 2) map-get($spacers, 2);
+          }
+
+          @media screen and (min-width: $desktop) and (max-height: $short-screen) {
+            font-size: 5.8vh;
+            line-height: 6.8vh;
+            letter-spacing: -1.13px;
+            padding: map-get($spacers, 0) map-get($spacers, 2);
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 0;
+            z-index: -1;
+            background-color: $neon;
+            transition: $transition-base;
+            transition-delay: 0.25s;
+          }
+
+          &:hover {
+            color: $navy;
+            background-color: rgba(27, 196, 255, 0.10);
+
+            &::after {
+              height: 100%;
+            }
+          }
+        }
+
+        &:first-of-type {
+          .dropdown-item {
+            border-top: none;
+          }
+        }
+      }
+
+      .mission_subheading {
+        .dropdown-item{
+          font-size: 21px;
+          font-weight: 400;
+          line-height: 57px; /* 150% */
+          letter-spacing: -0.76px;
+
+          @media screen and (min-width: $desktop) {
+            font-size: 38px;
+          }
+          @media screen and (min-width: $desktop) and (max-height: $medium-screen) {
+            font-size: 20px;
+            line-height: 30px;
+            padding: map-get($spacers, 2) map-get($spacers, 2);
+          }
+          @media screen and (min-width: $desktop) and (max-height: $short-screen) {
+            font-size: 5.2vh;
+            line-height: 6.8vh;
+            padding: map-get($spacers, 0) map-get($spacers, 2);
+          }
+        }
+      }
+
+      &.show {
+        top: 100%;
+
+        .menu-item {
+          .dropdown-item {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &.search-active {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+  }
+}
+
+.mobile-hidden {
+  height: 0;
+  overflow: hidden;
+}

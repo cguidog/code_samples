@@ -1,0 +1,130 @@
+.single-bio-container {
+  margin: map-get($spacers, 3) 0;
+}
+
+.single-bio-card-block {
+  display: flex;
+  flex-direction: column;
+  gap: map-get($spacers, 2);
+
+  &-column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .link-eqlipse {
+      width: fit-content;
+      margin-left: 45px;
+
+      &::before,
+      &::after {
+        right: 0;
+        left: -45px;
+      }
+      
+      &::after {
+        transform: rotate(180deg);
+      }
+
+      &:hover{
+        &::before {
+          height: 33px;
+          width: 33px;
+          left: -49px;
+        }
+      }
+    }
+
+    &.top-trim {
+      padding: map-get($spacers, 2) 10px;
+      border-top: solid 1px $navy-100;
+      margin-top: map-get($spacers, 6);
+      opacity: 0;
+      animation-name: appear;
+      animation-delay: 1.75s;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+
+      .social-media-platforms {
+        justify-content: flex-start;
+
+        .social-media-icon {
+          &.youtube-icon {
+            &:hover {
+              background-image: url('./../assets/images/social/youtube_hover.svg');
+            }
+          }
+          &.twitter-icon {
+            &:hover {
+              background-image: url('./../assets/images/social/twitter_hover.svg');
+            }
+          }
+          &.linked_in-icon {
+            &:hover {
+              background-image: url('./../assets/images/social/linked_in_hover.svg');
+            }
+          }
+          &.instagram-icon {
+            &:hover {
+              background-image: url('./../assets/images/social/instagram_hover.svg');
+            }
+          }
+          &.facebook-icon {
+            &:hover {
+              background-image: url('./../assets/images/social/facebook_hover.svg');
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    flex-direction: row;
+
+    &-column {
+      width: 50%;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    &-column {
+      &:first-of-type {
+        width: 66%;
+      }
+
+      &:last-of-type {
+        width: 33%;
+      }
+    }
+  }
+}
+
+.single-bio-name {
+  white-space: pre-line;
+}
+
+.single-bio-image {
+  border-radius: 5px;
+  width: 100%;
+  opacity: 0;
+  animation-name: appear;
+  animation-delay: 1.25s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.single-bio-content {
+  width: 100%;
+  
+  &-container {
+    display: flex;
+    justify-content: flex-end;
+    margin: map-get($spacers, 7) map-get($spacers, 2);
+  }
+  
+  @media screen and (min-width: $desktop) {
+    width: 66%;
+  }
+}

@@ -1,0 +1,108 @@
+{
+    "key": "group_650eda88b6cc8",
+    "title": "Google Maps & Contact",
+    "fields": [
+        {
+            "key": "field_650a25cd3dedd",
+            "label": "Key",
+            "name": "google_api_key",
+            "aria-label": "",
+            "type": "password",
+            "instructions": "Google Documentation: https:\/\/developers.google.com\/maps\/documentation\/javascript\/get-api-key",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_650ed2fc1590f",
+            "label": "Map ID",
+            "name": "map_id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Add the map ID to display the map with your custom styles",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_65101fe4f27ba",
+            "label": "Form Name or ID",
+            "name": "form_id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_650f93d3a534b",
+            "label": "Form Routing field ID",
+            "name": "form_routing_field_id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "This is the name of the hidden field that will manage the submissions routing. The syntax should be: input_[FIELD_ID]. Leave this field blank if you don't want to enable form routing based on office location.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "input_1",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "eqlipse-settings"
+            },
+            {
+                "param": "current_user_role",
+                "operator": "==",
+                "value": "administrator"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1695555604
+}

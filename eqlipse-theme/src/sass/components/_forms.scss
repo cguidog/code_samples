@@ -1,0 +1,50 @@
+.gform_wrapper.gravity-theme {
+  form {
+    .gfield_label {
+      @extend .body-21-bold;
+    }
+
+    input:not([type="submit"]),
+    textarea {
+      @extend .body-21;
+      border: none;
+      border-bottom: 1px solid $navy-75;
+      background-color: $navy-50;
+
+      &::placeholder {
+        @extend .body-21;
+
+        color: $navy-200
+      }
+    }
+
+    textarea {
+      border: 1px solid $navy-75;
+    }
+
+    input[type="submit"] {
+      @extend .body-16-bold;
+
+      background-color: transparent;
+      border: 1px solid $navy-300;
+      border-radius: 5px;
+      padding: 12px 20px;
+
+    }
+
+    &.newsletter-form {
+      display: flex;
+      gap: 10px 32px;
+      align-items: center;
+
+      .gform_footer {
+        margin: 0;
+        padding: 0;
+
+        input[type=submit] {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

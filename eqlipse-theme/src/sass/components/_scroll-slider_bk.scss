@@ -1,0 +1,50 @@
+// html, body {
+//     -webkit-overflow-scrolling: touch;
+//     overflow-scrolling: touch;
+//   }
+  
+// body {
+//     margin:0;
+//     padding:0;
+//     background:#000;
+//     color:#fff;
+//     overscroll-behavior: none;
+//     overflow-x: hidden;
+//     overflow-y: scroll;
+// }
+
+.scroll-slider {
+    margin:0;
+    scroll-padding-top: 20px;
+
+    .panels {
+        overscroll-behavior: none;
+        width: 600%;
+        height: 100vh;
+        display: flex;
+        flex-wrap: nowrap;
+        will-change: transform;
+
+        .panel {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background-size: cover;
+            will-change: transform;
+        }
+
+        .panel-inner {
+            width: 100%;
+            height: 80%;
+            background-size: cover;
+            will-change: transform;
+        }
+
+        .panel-content {
+        
+        }
+    }
+}

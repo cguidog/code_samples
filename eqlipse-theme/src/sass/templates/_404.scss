@@ -1,0 +1,38 @@
+.section-404 {
+  min-height: 60vh;
+  display: flex;
+  align-items: flex-end;
+
+  .not-found {
+    margin-bottom: map-get($spacers, 6);
+
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 148px;
+      width: 66%;
+    }
+  }
+  .search-form-container,
+  .no-results-message {
+    margin: 0 map-get($spacers, 2);
+    text-shadow: 0 0 3px rgba($black, 0.2);
+  }
+
+  .content-section-links {
+    margin: map-get($spacers, 2);
+  }
+
+  .section-404-background {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    &-video {
+      width: 100%;
+    }
+
+    @media screen and (min-width: $desktop) and (min-width: $desktop) {
+      height: 130vh;
+      object-fit: cover;
+    }
+  }
+}

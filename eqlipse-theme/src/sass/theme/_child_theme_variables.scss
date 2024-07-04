@@ -1,0 +1,162 @@
+// Use this file to overwrite the basic Bootstrap variables and add your own variables
+// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
+// Just copy a variable from src/sass/assets/bootstrap5/_variables.scss, paste it here and edit the value.
+
+
+/******************
+TYPOGRAPHY
+******************/
+
+$epilogue: "Epilogue", sans-serif;
+$font-weight-bold: 900;
+
+/******************
+COLORS
+******************/
+$black: #000;
+$cream: #fffced;
+$gold: #dba349;
+$navy: #002836;
+$neon: #1bc4ff;
+$silver: #ccc;
+$white: #fff;
+
+$colors: (
+  black: $black,
+  cream: $cream,
+  gold: $gold,
+  navy: $navy,
+  neon: $neon,
+  silver: $silver,
+  white: $white
+);
+
+$cream-50: #fffffd;
+$cream-75: #fffef8;
+$cream-100: #fffdf5;
+$cream-200: #fffdf0;
+$cream-300: $cream;
+$cream-400: #b3b0a6;
+$cream-500: #9c9a91;
+
+$gold-50: #fbf6ed;
+$gold-75: #f0d9b4;
+$gold-100: #eaca95;
+$gold-200: #e1b368;
+$gold-300: $gold;
+$gold-400: #997233;
+$gold-500: #86632d;
+
+$navy-50: #e6eaeb;
+$navy-75: #96a7ad;
+$navy-100: #6b828a;
+$navy-200: #2b4d58;
+$navy-300: $navy;
+$navy-400: #001c26;
+$navy-500: #001821;
+
+$neon-50: #e8f9ff;
+$neon-75: #a2e7ff;
+$neon-100: #7bddff;
+$neon-200: #42ceff;
+$neon-300: $neon;
+$neon-400: #1389b3;
+$neon-500: #10789c;
+
+$silver-50: #fafafa;
+$silver-75: #eaeaea;
+$silver-100: #e1e1e1;
+$silver-200: #d5d5d5;
+$silver-300: $silver;
+$silver-400: #8f8f8f;
+$silver-500: #7c7c7c;
+
+$variants: (
+  cream: (
+    50: $cream-50,
+    75: $cream-75,
+    100: $cream-100,
+    200: $cream-200,
+    300: $cream-300,
+    400: $cream-400,
+    500: $cream-500,
+  ),
+  gold: (
+    50: $gold-50,
+    75: $gold-75,
+    100: $gold-100,
+    200: $gold-200,
+    300: $gold-300,
+    400: $gold-400,
+    500: $gold-500,
+  ),
+  navy: (
+    50: $navy-50,
+    75: $navy-75,
+    100: $navy-100,
+    200: $navy-200,
+    300: $navy-300,
+    400: $navy-400,
+    500: $navy-500,
+  ),
+  neon: (
+    50: $neon-50,
+    75: $neon-75,
+    100: $neon-100,
+    200: $neon-200,
+    300: $neon-300,
+    400: $neon-400,
+    500: $neon-500,
+  ),
+  silver: (
+    50: $silver-50,
+    75: $silver-75,
+    100: $silver-100,
+    200: $silver-200,
+    300: $silver-300,
+    400: $silver-400,
+    500: $silver-500,
+  ),
+);
+
+$primary: $navy;
+
+/******************
+SPACERS
+******************/
+
+$spacers: (
+  0: 12px,
+  1: 16px,
+  2: 24px,
+  3: 32px,
+  4: 36px,
+  6: 50px,
+  7: 100px,
+  8: 200px
+);
+  
+/******************
+BREAKPOINTS
+******************/
+
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 992px;
+$desktop-lg: 1180px;
+$desktop-xl: 1400px;
+$desktop-2xl: 1750px;
+$desktop-3xl: 2200px;
+
+/******************
+VERTICAL BREAKPOINTS
+******************/
+$short-screen: 690px;
+$medium-screen: 875px; 
+$tall-screen: 1090px; 
+
+/******************
+TRANSITIONS & ANIMATIONS
+******************/
+
+$transition-base: all 0.25s ease-out;

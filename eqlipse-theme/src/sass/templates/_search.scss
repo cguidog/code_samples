@@ -1,0 +1,37 @@
+.search-section {
+  margin-bottom: map-get($spacers, 7);
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: map-get($spacers, 8);
+  }
+
+  &-heading {
+    margin: map-get($spacers, 6) map-get($spacers, 2);
+
+    @media screen and (min-width: $desktop) {
+      margin: map-get($spacers, 7) map-get($spacers, 2) map-get($spacers, 6);
+    }
+  }
+
+  .search-pagination {
+    display: flex;
+    justify-content: center;
+    margin: map-get($spacers, 4) 0;
+  }
+
+  .no-results-content {
+    margin: 0 map-get($spacers, 2);
+
+    form {
+      .input-container {
+        .search-field {
+          color: $navy;
+        }
+
+        .search-submit {
+          border-color: transparent;
+        }
+      }
+    }
+  }
+}

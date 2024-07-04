@@ -1,0 +1,98 @@
+{
+    "key": "group_64be6ba8a935f",
+    "title": "Social Media Platforms",
+    "fields": [
+        {
+            "key": "field_64be6ba9416c2",
+            "label": "Platforms",
+            "name": "platforms",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Platform",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_64be6c06416c4",
+                    "label": "Name",
+                    "name": "platform_name",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "''": "Select One",
+                        "facebook": "Facebook",
+                        "instagram": "Instagram",
+                        "linked_in": "Linked In",
+                        "youtube": "YouTube",
+                        "twitter": "Twitter"
+                    },
+                    "default_value": false,
+                    "return_format": "array",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_64be6ba9416c2"
+                },
+                {
+                    "key": "field_64be6c1f416c5",
+                    "label": "URL",
+                    "name": "platform_url",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "75",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_64be6ba9416c2"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "eqlipse-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1695437329
+}

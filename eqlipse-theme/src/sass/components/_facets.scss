@@ -1,0 +1,216 @@
+.facets-container {
+  margin-top: map-get($spacers, 3);
+
+  @media screen and (min-width: $desktop) {
+    margin-top: map-get($spacers, 7);
+  }
+}
+
+.facetwp-counter {
+  display: none;
+}
+
+.facets-container-section {
+  display: flex;
+  gap: map-get($spacers, 2);
+  align-items: flex-start;
+  background-color: $cream-75;
+  // padding: 8px 0;
+  padding: map-get($spacers, 2) 0 14px;
+  position: sticky;
+  z-index: 1;
+  top: 83px;
+  flex-direction: column;
+  
+  @media screen and (min-width: $desktop) {
+    padding: 14px 0;
+    top: 100px;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  &.bio-facets {
+    position: relative;
+
+    .facetwp-display-value {
+      white-space: nowrap;
+      font-size: 34px;
+
+      @media(min-width: $mobile) {
+        font-size:38px;
+      }
+    }
+  }
+}
+
+.facetwp-type-checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  column-gap: map-get($spacers, 2);
+  row-gap: map-get($spacers, 3);
+  
+  @media screen and (min-width: $desktop) {
+    column-gap: map-get($spacers, 2);
+    row-gap: map-get($spacers, 2);
+    flex-wrap: nowrap;
+  }
+
+  .facetwp-checkbox {
+    background-image: none;
+    padding: 0;
+    margin-bottom: 0;
+
+    .facetwp-display-value {
+      line-height: 24px;
+      letter-spacing: 0.5px;
+      padding: 14px;
+      border-radius: 5px;
+      border: solid $navy 1px;
+      color: $navy;
+      background-color: transparent;
+      transition: $transition-base;
+
+      &:hover,
+      &:focus-visible {
+        background-color: $navy-75;
+      }
+    }
+
+    &.checked {
+      background-image: none;
+
+      .facetwp-display-value {
+        background-color: $navy;
+        color: $cream-50;
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+
+  &.facetwp-facet {
+    margin-bottom: 0;
+  }
+}
+
+.facetwp-facet-newsroom_search {
+  min-width: 100%;
+
+  @media screen and (min-width: $desktop) {
+    min-width: 240px;
+  }
+  
+  .facetwp-input-wrap {
+    min-width: 100%;
+
+    @media screen and (min-width: $desktop) {
+      min-width: 240px;
+    }
+
+    .facetwp-search {
+      border-radius: 5px;
+      border: 1px solid $navy-100;
+      background-color: transparent;
+      padding: 10px;
+      min-width: 100%;
+  
+      @media screen and (min-width: $desktop) {
+        min-width: 240px;
+      }
+    }
+  }
+
+  .facetwp-icon {
+    margin-right: 10px;
+  }
+
+  &.facetwp-facet {
+    margin-bottom: 0;
+  }
+}
+
+.facetwp-template {
+  @extend .related-post-container;
+}
+
+.facetwp-facet-load_more {
+  .facetwp-load-more {
+    @extend .display-120;
+
+    background-color: transparent;
+    border: none;
+    color: $navy-75;
+    font-weight: $font-weight-bold;
+    padding: map-get($spacers, 3) 0;
+    transition: $transition-base;
+
+    &:hover,
+    &:focus-visible {
+      color: $navy-100;
+    }
+  }
+}
+
+.facetwp-facet-bio_select {
+  position: relative;
+  width: 100%;
+
+  &::after {
+    height: map-get($spacers, 7);
+    content: "";
+    z-index: 1;
+    left: 0;
+    position: absolute;
+    width: 40%;
+  }
+  
+  &.facetwp-facet {
+    @media screen and (min-width: $desktop) {
+      margin-bottom: map-get($spacers, 7);
+    }
+  }
+
+  .facetwp-radio {
+    position: absolute;
+    right: 0;
+    background: none;
+    background-color: transparent;
+    font-weight: $font-weight-bold;
+    opacity: 1;
+    width: 33%;
+    height: fit-content;
+    padding: map-get($spacers, 1);
+    border: 1px solid $navy-100;
+    color: $navy;
+    border-radius: 5px;
+    text-align: center;
+    transition: background 0.25s ease-in-out;
+
+    &:hover,
+    &:focus-visible {
+      background-color: $navy-75;
+    }
+  
+    &.checked {
+      @extend .display-51;
+      right: unset;
+      left: 0;
+      background: none;
+      opacity: 1;
+      border: none;
+      text-align: left;
+      padding: 0;
+      width: 50%;
+
+      &:hover {
+        background-color: transparent;
+        cursor: default;
+      }
+    }
+  }
+}
+
+.section.facets-results-section {
+  margin-top: map-get($spacers, 7);
+}
+
